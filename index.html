@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAFA Clinic & ATAMA Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Gateway: Split Screen -->
+  <div class="split-container">
+    <div class="split left" id="safa">
+      <h1>SAFA Clinic</h1>
+      <p>Holistic Acupuncture Healing</p>
+      <a href="#safa-booking" class="btn">Book Appointment</a>
+    </div>
+    
+    <div class="split right" id="atama">
+      <h1>ATAMA Academy</h1>
+      <p>Excellence in Acupuncture Education</p>
+      <a href="#atama-enroll" class="btn">Enroll Now</a>
+    </div>
+  </div>
+
+  <!-- Daily Medical Hadith Engine -->
+  <div class="hadith-container">
+    <h3>Tibb-e-Nabawi (Daily Insight)</h3>
+    <p id="hadith-text">Loading daily insight...</p>
+    <p id="hadith-ref" class="reference"></p>
+  </div>
+
+  <!-- Forms and Payment Section (Example) -->
+  <div class="payment-section">
+    <h2>Join the Academy</h2>
+    <!-- Use Formspree to get emails without a backend -->
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <button type="submit" class="btn-dark">Submit Application</button>
+    </form>
+    
+    <br>
+    <!-- Razorpay Payment Button integration -->
+    <form>
+      <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_YOUR_BUTTON_ID" async> </script>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
