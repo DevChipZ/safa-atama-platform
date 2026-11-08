@@ -6,12 +6,12 @@
 }
 
 /* -------------------------------------
-   THE LEANING SLIDING DOOR INTERACTION
+   THE LEANING SLIDING DOOR INTERACTION (FIXED)
 -------------------------------------- */
 body, html {
   height: 100%;
   overflow: hidden; 
-  background-color: #000; /* Dark background enhances the 3D pop effect */
+  background-color: #000; 
 }
 
 .split-layout {
@@ -28,24 +28,25 @@ body, html {
   transition: all 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transform: scale(1);
+  filter: brightness(1) blur(0px); /* Base state is sharp */
 }
 
-/* The active panel expands to 85% width */
+/* Step 1: When you hover the layout anywhere, push BOTH panels into the background... */
+.split-layout:hover .panel {
+  flex: 15; 
+  transform: scale(0.95); 
+  filter: brightness(0.4) blur(3px); 
+  z-index: 1;
+}
+
+/* Step 2: ...BUT immediately pull the specific panel you are hovering BACK to the front */
 .split-layout .panel:hover {
   flex: 85; 
   overflow-y: auto; 
   z-index: 10;
   transform: scale(1);
-  filter: brightness(1) blur(0px);
-}
-
-/* The inactive panel shrinks to 15%, goes dark, and blurs slightly (The Leaning Effect) */
-.split-layout:hover .panel:not(:hover) {
-  flex: 15; 
-  transform: scale(0.95); /* Pushes it back in 3D space */
-  filter: brightness(0.4) blur(3px); /* Darkens and blurs it */
-  z-index: 1;
-  pointer-events: none; /* Prevents accidental clicks on the blurred part */
+  filter: brightness(1) blur(0px); /* Keeps the active one perfectly sharp */
 }
 
 /* Lock content to 85vw so it never squishes when expanded */
