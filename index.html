@@ -10,21 +10,32 @@
 
   <!-- Gateway: Split Screen -->
   <div class="split-container">
+    
+    <!-- SAFA Side: Liquidmorphism & Glassmorphism -->
     <div class="split left" id="safa">
-      <h1>SAFA Clinic</h1>
-      <p>Holistic Acupuncture Healing</p>
-      <a href="#payment-section" class="btn">Book Appointment</a>
+      <!-- Decorative Liquid Blobs -->
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      
+      <div class="glass-card">
+        <h1>SAFA Clinic</h1>
+        <p>Holistic Acupuncture Healing</p>
+        <a href="#payment-section" class="btn glass-btn">Book Appointment</a>
+      </div>
     </div>
     
+    <!-- ATAMA Side: Blockmorphism / Neubrutalism -->
     <div class="split right" id="atama">
-      <h1>ATAMA Academy</h1>
-      <p>Excellence in Acupuncture Education</p>
-      <a href="#payment-section" class="btn">Enroll Now</a>
+      <div class="block-card">
+        <h1>ATAMA Academy</h1>
+        <p>Excellence in Acupuncture Education</p>
+        <a href="#payment-section" class="btn block-btn">Enroll Now</a>
+      </div>
     </div>
   </div>
 
-  <!-- Daily Medical Hadith Engine -->
-  <div class="hadith-container">
+  <!-- Daily Medical Hadith Engine (Styled Blockmorphic) -->
+  <div class="hadith-container block-element">
     <h3>Tibb-e-Nabawi (Daily Insight)</h3>
     <p id="hadith-text">Loading daily insight...</p>
     <p id="hadith-ref" class="reference"></p>
@@ -32,34 +43,36 @@
 
   <!-- Forms and Payment Section -->
   <div class="payment-section" id="payment-section">
-    <h2>Book Appointment & Pay Fees</h2>
-    
-    <!-- Application / Booking Form -->
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <select name="purpose" required>
-        <option value="" disabled selected>Select Purpose</option>
-        <option value="Clinic Appointment">SAFA Clinic - Book Appointment</option>
-        <option value="Academy Enrollment">ATAMA Academy - Course Enrollment</option>
-      </select>
-      <button type="submit" class="btn-dark">Submit Details</button>
-    </form>
-    
-    <!-- UPI Payment Area -->
-    <div class="upi-payment-container">
-      <p class="payment-instruction">Securely pay via any UPI app (Google Pay, PhonePe, Paytm)</p>
+    <div class="payment-wrapper">
+      <h2>Book Appointment & Pay Fees</h2>
       
-      <!-- Deep Link for Mobile Users -->
-      <a href="upi://pay?pa=9443389935@okbizaxis&pn=Safa%20Acupuncture%20Clinic&cu=INR" class="btn-upi">
-        Pay via UPI App (Mobile Only)
-      </a>
+      <!-- Application / Booking Form -->
+      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required class="block-input">
+        <input type="email" name="email" placeholder="Your Email" required class="block-input">
+        <select name="purpose" required class="block-input">
+          <option value="" disabled selected>Select Purpose</option>
+          <option value="Clinic Appointment">SAFA Clinic - Book Appointment</option>
+          <option value="Academy Enrollment">ATAMA Academy - Course Enrollment</option>
+        </select>
+        <button type="submit" class="btn block-submit-btn">Submit Details</button>
+      </form>
+      
+      <!-- UPI Payment Area -->
+      <div class="upi-payment-container block-element">
+        <p class="payment-instruction">Securely pay via any UPI app</p>
+        
+        <!-- Deep Link for Mobile Users -->
+        <a href="upi://pay?pa=9443389935@okbizaxis&pn=Safa%20Acupuncture%20Clinic&cu=INR" class="btn block-upi-btn">
+          Pay via UPI App (Mobile Only)
+        </a>
 
-      <!-- QR Code for Desktop Users -->
-      <div class="qr-box">
-        <p>Or scan this QR Code:</p>
-        <img src="IMG_20261107_123222386.jpg" alt="Safa Acupuncture Clinic QR Code" class="qr-code">
-        <p class="upi-id"><strong>UPI ID:</strong> 9443389935@okbizaxis</p>
+        <!-- QR Code for Desktop Users -->
+        <div class="qr-box">
+          <p class="qr-text">Or scan this QR Code:</p>
+          <img src="IMG_20261107_123222386.jpg" alt="Safa Acupuncture Clinic QR Code" class="qr-code">
+          <p class="upi-id"><strong>UPI ID:</strong> 9443389935@okbizaxis</p>
+        </div>
       </div>
     </div>
   </div>
