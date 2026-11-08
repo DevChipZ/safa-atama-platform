@@ -3,78 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAFA Clinic & ATAMA Academy</title>
+  <title>SAFA & ATAMA Platform</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Gateway: Split Screen -->
-  <div class="split-container">
-    
-    <!-- SAFA Side: Liquidmorphism & Glassmorphism -->
-    <div class="split left" id="safa">
-      <!-- Decorative Liquid Blobs -->
-      <div class="blob blob-1"></div>
-      <div class="blob blob-2"></div>
+  <!-- The Shared Payment Modal (Hidden by default) -->
+  <div id="payment-modal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" onclick="togglePayment()">&times;</span>
+      <h2>Secure Payment Portal</h2>
+      <p>Pay for Clinic Appointments or Academy Fees</p>
       
-      <div class="glass-card">
-        <h1>SAFA Clinic</h1>
-        <p>Holistic Acupuncture Healing</p>
-        <a href="#payment-section" class="btn glass-btn">Book Appointment</a>
-      </div>
-    </div>
-    
-    <!-- ATAMA Side: Blockmorphism / Neubrutalism -->
-    <div class="split right" id="atama">
-      <div class="block-card">
-        <h1>ATAMA Academy</h1>
-        <p>Excellence in Acupuncture Education</p>
-        <a href="#payment-section" class="btn block-btn">Enroll Now</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Daily Medical Hadith Engine (Styled Blockmorphic) -->
-  <div class="hadith-container block-element">
-    <h3>Tibb-e-Nabawi (Daily Insight)</h3>
-    <p id="hadith-text">Loading daily insight...</p>
-    <p id="hadith-ref" class="reference"></p>
-  </div>
-
-  <!-- Forms and Payment Section -->
-  <div class="payment-section" id="payment-section">
-    <div class="payment-wrapper">
-      <h2>Book Appointment & Pay Fees</h2>
-      
-      <!-- Application / Booking Form -->
-      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required class="block-input">
-        <input type="email" name="email" placeholder="Your Email" required class="block-input">
-        <select name="purpose" required class="block-input">
-          <option value="" disabled selected>Select Purpose</option>
-          <option value="Clinic Appointment">SAFA Clinic - Book Appointment</option>
-          <option value="Academy Enrollment">ATAMA Academy - Course Enrollment</option>
-        </select>
-        <button type="submit" class="btn block-submit-btn">Submit Details</button>
-      </form>
-      
-      <!-- UPI Payment Area -->
-      <div class="upi-payment-container block-element">
-        <p class="payment-instruction">Securely pay via any UPI app</p>
-        
-        <!-- Deep Link for Mobile Users -->
-        <a href="upi://pay?pa=9443389935@okbizaxis&pn=Safa%20Acupuncture%20Clinic&cu=INR" class="btn block-upi-btn">
-          Pay via UPI App (Mobile Only)
+      <div class="upi-payment-container">
+        <a href="upi://pay?pa=9443389935@okbizaxis&pn=Safa%20Acupuncture%20Clinic&cu=INR" class="btn btn-primary">
+          Pay via UPI App (Mobile)
         </a>
-
-        <!-- QR Code for Desktop Users -->
         <div class="qr-box">
-          <p class="qr-text">Or scan this QR Code:</p>
-          <img src="IMG_20261107_123222386.jpg" alt="Safa Acupuncture Clinic QR Code" class="qr-code">
-          <p class="upi-id"><strong>UPI ID:</strong> 9443389935@okbizaxis</p>
+          <p>Scan to Pay:</p>
+          <img src="IMG_20261107_123222386.jpg" alt="UPI QR" class="qr-code">
+          <p><strong>UPI ID:</strong> 9443389935@okbizaxis</p>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- The Sliding Split Layout -->
+  <div class="split-layout">
+
+    <!-- ==========================================
+         SAFA CLINIC SIDE 
+         ========================================== -->
+    <div class="panel safa-panel">
+      <!-- The inner container is locked to 100vw so it doesn't squish -->
+      <div class="panel-content">
+        
+        <!-- Safa Navbar -->
+        <nav class="safa-nav">
+          <div class="logo">SAFA Hospital</div>
+          <div class="nav-links">
+            <a href="#safa-home">Home</a>
+            <a href="#safa-services">Services</a>
+            <a href="#safa-contact">Contact</a>
+            <a href="#safa-location">Location</a>
+            <button onclick="togglePayment()" class="btn btn-primary">Make Payment</button>
+          </div>
+        </nav>
+
+        <!-- Safa Hero Section (Inspired by safa.webp) -->
+        <section id="safa-home" class="safa-hero">
+          <div class="hero-text">
+            <h1>A heritage in care.<br>A reputation in excellence.</h1>
+            <p>Safa Acupuncture delivers standard care by prioritizing the safety and recovery of our patients.</p>
+            
+            <div class="booking-bar">
+              <input type="date" class="safa-input">
+              <select class="safa-input">
+                <option>Nagercoil Branch</option>
+              </select>
+              <button class="btn btn-primary">Book Now</button>
+            </div>
+          </div>
+          <div class="hero-image-placeholder safa-img">
+            <!-- Medical Staff Image Goes Here -->
+            <span>Clinic Staff Image</span>
+          </div>
+        </section>
+        
+        <section id="safa-services" style="padding: 100px 50px;">
+          <h2>Our Speciality</h2>
+          <p>Scroll down to see the rest of the clinic site...</p>
+          <!-- Add more clinic content here -->
+        </section>
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+         ATAMA ACADEMY SIDE 
+         ========================================== -->
+    <div class="panel atama-panel">
+      <div class="panel-content">
+        
+        <!-- Atama Navbar -->
+        <nav class="atama-nav">
+          <div class="logo">ATAMA Academy</div>
+          <div class="nav-links">
+            <a href="#atama-home">Home</a>
+            <a href="#atama-courses">Courses</a>
+            <a href="#atama-contact">Contact</a>
+            <a href="#atama-location">Location</a>
+            <button onclick="togglePayment()" class="btn btn-accent">Pay Fees</button>
+          </div>
+        </nav>
+
+        <!-- Atama Hero Section (Inspired by atama.webp) -->
+        <section id="atama-home" class="atama-hero">
+          <div class="hero-text">
+            <h1>Learn with the #1<br>Acupuncture Academy</h1>
+            <button class="btn btn-accent">Book a Demo Class</button>
+          </div>
+          <div class="hero-video-placeholder">
+            <!-- Video/Tutor Image Goes Here -->
+            <span>Lecture Video</span>
+          </div>
+        </section>
+
+        <!-- Atama Courses Grid -->
+        <section id="atama-courses" class="atama-courses-section">
+          <h2>Most Popular Courses</h2>
+          <div class="course-grid">
+            <div class="course-card">
+              <h3>Diploma in Acupuncture Therapy</h3>
+              <p>6-month course duration</p>
+            </div>
+            <div class="course-card">
+              <h3>Master of Acupuncture</h3>
+              <p>Advanced practical training</p>
+            </div>
+            <div class="course-card">
+              <h3>Tibb-e-Nabawi Medicine</h3>
+              <p>Specialized prophetic medicine</p>
+            </div>
+          </div>
+        </section>
+        
+      </div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
