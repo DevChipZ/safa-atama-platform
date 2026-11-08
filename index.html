@@ -13,13 +13,13 @@
     <div class="split left" id="safa">
       <h1>SAFA Clinic</h1>
       <p>Holistic Acupuncture Healing</p>
-      <a href="#safa-booking" class="btn">Book Appointment</a>
+      <a href="#payment-section" class="btn">Book Appointment</a>
     </div>
     
     <div class="split right" id="atama">
       <h1>ATAMA Academy</h1>
       <p>Excellence in Acupuncture Education</p>
-      <a href="#atama-enroll" class="btn">Enroll Now</a>
+      <a href="#payment-section" class="btn">Enroll Now</a>
     </div>
   </div>
 
@@ -30,21 +30,38 @@
     <p id="hadith-ref" class="reference"></p>
   </div>
 
-  <!-- Forms and Payment Section (Example) -->
-  <div class="payment-section">
-    <h2>Join the Academy</h2>
-    <!-- Use Formspree to get emails without a backend -->
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+  <!-- Forms and Payment Section -->
+  <div class="payment-section" id="payment-section">
+    <h2>Book Appointment & Pay Fees</h2>
+    
+    <!-- Application / Booking Form -->
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
-      <button type="submit" class="btn-dark">Submit Application</button>
+      <select name="purpose" required>
+        <option value="" disabled selected>Select Purpose</option>
+        <option value="Clinic Appointment">SAFA Clinic - Book Appointment</option>
+        <option value="Academy Enrollment">ATAMA Academy - Course Enrollment</option>
+      </select>
+      <button type="submit" class="btn-dark">Submit Details</button>
     </form>
     
-    <br>
-    <!-- Razorpay Payment Button integration -->
-    <form>
-      <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_YOUR_BUTTON_ID" async> </script>
-    </form>
+    <!-- UPI Payment Area -->
+    <div class="upi-payment-container">
+      <p class="payment-instruction">Securely pay via any UPI app (Google Pay, PhonePe, Paytm)</p>
+      
+      <!-- Deep Link for Mobile Users -->
+      <a href="upi://pay?pa=9443389935@okbizaxis&pn=Safa%20Acupuncture%20Clinic&cu=INR" class="btn-upi">
+        Pay via UPI App (Mobile Only)
+      </a>
+
+      <!-- QR Code for Desktop Users -->
+      <div class="qr-box">
+        <p>Or scan this QR Code:</p>
+        <img src="IMG_20261107_123222386.jpg" alt="Safa Acupuncture Clinic QR Code" class="qr-code">
+        <p class="upi-id"><strong>UPI ID:</strong> 9443389935@okbizaxis</p>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
