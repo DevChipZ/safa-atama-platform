@@ -8,163 +8,126 @@
 </head>
 <body>
 
-  <!-- The Shared Payment Modal (Hidden by default) -->
+  <!-- Sliding Header Section -->
+  <header class="sliding-header-container">
+    <div class="sliding-track">
+      <!-- SAFA Slide -->
+      <div class="header-slide clinic-slide">
+        <h1>SAFA Acupuncture Clinic</h1>
+        <p>123 Healing Street, Nagercoil - 629001</p>
+        <p>Email: contact@safaclinic.com | Ph: +91 98765 43210</p>
+      </div>
+      <!-- ATAMA Slide -->
+      <div class="header-slide academy-slide">
+        <h1>ATAMA Acupuncture Academy</h1>
+        <p>456 Education Avenue, Nagercoil - 629001</p>
+        <p>Email: admin@atamaacademy.com | Ph: +91 91234 56780</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main 3-Column Content Area -->
+  <div class="main-layout">
+    
+    <!-- Left Sidebar: Contents -->
+    <aside class="left-sidebar">
+      <h3>Contents</h3>
+      <nav class="side-nav">
+        <a href="#home">Home</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#services">Services</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact us</a>
+        <a href="#" class="payment-link" onclick="togglePayment()">Make Payment</a>
+      </nav>
+    </aside>
+
+    <!-- Center Content: Last Updated -->
+    <main class="center-content">
+      <div class="update-box">
+        <h2>Last Updated Content</h2>
+        <div class="update-feed">
+          <article class="feed-item">
+            <h4>New Case Study Published</h4>
+            <p>Dr. Sathick M has published a new peer-reviewed paper on the efficacy of Hijama for chronic migraines. Read the full methodology and patient results.</p>
+            <span class="date">Nov 10, 2026</span>
+          </article>
+          <article class="feed-item">
+            <h4>Academy Admissions Open</h4>
+            <p>Enrollment for the upcoming Master of Acupuncture (M.Acu) batch is now live. Limited seats available for the practical sessions.</p>
+            <span class="date">Nov 08, 2026</span>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- Right Sidebar: Lists -->
+    <aside class="right-sidebar">
+      <div class="list-section">
+        <h3>Treatments</h3>
+        <ul>
+          <li>Traditional Acupuncture</li>
+          <li>Wet Cupping (Hijama)</li>
+          <li>Dry Cupping</li>
+          <li>Herbal Medicine</li>
+          <li>Moxibustion</li>
+        </ul>
+      </div>
+      <div class="list-section">
+        <h3>Courses</h3>
+        <ul>
+          <li>D.A.T. (6 Months)</li>
+          <li>M.Acu (1 Year)</li>
+          <li>Tibb-e-Nabawi Cert.</li>
+          <li>Pulse Diagnosis</li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Lower Section: Daily Hadeeth -->
+  <section class="hadeeth-section">
+    <div class="section-badge">Hadeeth (Daily Updation Needed)</div>
+    <div class="hadeeth-content">
+      <h3 id="hadith-text">Loading today's insight...</h3>
+      <p id="hadith-ref" class="reference"></p>
+    </div>
+  </section>
+
+  <!-- Bottom Section: Suggested Content -->
+  <section class="suggested-section">
+    <div class="section-badge">Suggested Content (Health & Wellness Tips)</div>
+    <div class="suggested-grid">
+      <div class="suggestion-card">
+        <h4>The Science of Hijama</h4>
+        <p>Learn how negative pressure therapy improves local blood circulation and removes cellular waste.</p>
+      </div>
+      <div class="suggestion-card">
+        <h4>Dietary Sunnahs</h4>
+        <p>Integrating black seed, honey, and dates into your modern daily routine for optimal immunity.</p>
+      </div>
+      <div class="suggestion-card">
+        <h4>Student Spotlight</h4>
+        <p>See how our alumni are establishing successful holistic clinics across Tamil Nadu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Payment Modal -->
   <div id="payment-modal" class="modal-overlay">
     <div class="modal-content">
       <span class="close-btn" onclick="togglePayment()">&times;</span>
       <h2>Secure Payment Portal</h2>
-      <p>Pay for Clinic Appointments or Academy Fees</p>
-      
-      <div class="upi-payment-container">
-        <a href="upi://pay?pa=9443389935@okbizaxis&pn=Safa%20Acupuncture%20Clinic&cu=INR" class="btn btn-primary">
-          Pay via UPI App (Mobile)
-        </a>
-        <div class="qr-box">
-          <p>Scan to Pay:</p>
-          <img src="IMG_20261107_123222386.jpg" alt="UPI QR" class="qr-code">
-          <p><strong>UPI ID:</strong> 9443389935@okbizaxis</p>
-        </div>
-      </div>
+      <a href="upi://pay?pa=9443389935@okbizaxis&pn=Safa%20Acupuncture%20Clinic&cu=INR" class="btn btn-primary" style="display:block; margin: 20px 0; padding:10px; background:#0d9488; color:white; text-decoration:none; border-radius:5px;">
+        Pay via UPI App (Mobile)
+      </a>
+      <img src="IMG_20261107_123222386.jpg" alt="UPI QR" style="max-width: 200px;">
+      <p><strong>UPI ID:</strong> 9443389935@okbizaxis</p>
     </div>
   </div>
 
-  <!-- The Sliding Split Layout -->
-  <div class="split-layout">
-
-    <!-- ==========================================
-         SAFA CLINIC SIDE 
-         ========================================== -->
-    <div class="panel safa-panel">
-      <!-- Content locked to 85vw so it fits perfectly when expanded -->
-      <div class="panel-content">
-        
-        <!-- Safa Navbar -->
-        <nav class="safa-nav">
-          <div class="logo">SAFA Clinic</div>
-          <div class="nav-links">
-            <a href="#safa-home">Home</a>
-            <a href="#safa-services">Treatments</a>
-            <a href="#safa-about">Our Doctors</a>
-            <button onclick="togglePayment()" class="btn btn-primary">Book & Pay</button>
-          </div>
-        </nav>
-
-        <!-- Safa Hero Section -->
-        <section id="safa-home" class="safa-hero">
-          <div class="hero-text">
-            <h1>A heritage in care.<br>A reputation in excellence.</h1>
-            <p>Safa Acupuncture delivers standard care by prioritizing the safety and holistic recovery of our patients using authentic Prophetic medicine and modern acupuncture.</p>
-            
-            <div class="booking-bar">
-              <input type="date" class="safa-input">
-              <select class="safa-input">
-                <option>Nagercoil Branch</option>
-                <option>Chennai Branch</option>
-              </select>
-              <button class="btn btn-primary">Book Now</button>
-            </div>
-          </div>
-          <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Clinic Staff">
-          </div>
-        </section>
-        
-        <!-- Safa Services -->
-        <section id="safa-services" class="safa-services">
-          <div class="section-header">
-            <h2>Our Speciality Treatments</h2>
-            <p>Comprehensive care for chronic and acute conditions.</p>
-          </div>
-          <div class="services-grid">
-            <div class="service-card">
-              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=300&q=80" alt="Acupuncture">
-              <h3>Traditional Acupuncture</h3>
-              <p>Targeted needle therapy to restore energy flow and relieve chronic pain.</p>
-            </div>
-            <div class="service-card">
-              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=300&q=80" alt="Hijama">
-              <h3>Wet Cupping (Hijama)</h3>
-              <p>Authentic Tibb-e-Nabawi therapy for detoxification and blood circulation.</p>
-            </div>
-            <div class="service-card">
-              <img src="https://images.unsplash.com/photo-1608286022629-cda998cfbaee?auto=format&fit=crop&w=300&q=80" alt="Herbal Medicine">
-              <h3>Herbal Medicine</h3>
-              <p>Natural prescriptions tailored to your specific physiological needs.</p>
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </div>
-
-
-    <!-- ==========================================
-         ATAMA ACADEMY SIDE 
-         ========================================== -->
-    <div class="panel atama-panel">
-      <div class="panel-content">
-        
-        <!-- Atama Navbar -->
-        <nav class="atama-nav">
-          <div class="logo">ATAMA Academy</div>
-          <div class="nav-links">
-            <a href="#atama-home">Home</a>
-            <a href="#atama-courses">Courses</a>
-            <a href="#atama-research">Research</a>
-            <button onclick="togglePayment()" class="btn btn-accent">Pay Fees</button>
-          </div>
-        </nav>
-
-        <!-- Atama Hero Section -->
-        <section id="atama-home" class="atama-hero">
-          <div class="hero-text">
-            <h1>Learn with the #1<br>Acupuncture Academy</h1>
-            <p>Join thousands of students mastering the art of alternative medicine, acupuncture, and Tibb-e-Nabawi with our internationally recognized diploma programs.</p>
-            <br>
-            <button class="btn btn-accent">Book a Demo Class</button>
-          </div>
-          <div class="hero-video">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80" alt="Lecture">
-            <div class="play-btn">▶</div>
-          </div>
-        </section>
-
-        <!-- Atama Courses Grid -->
-        <section id="atama-courses" class="atama-courses-section">
-          <h2>Most Popular Courses</h2>
-          <p>Choose from our certified foundational and advanced diploma programs.</p>
-          <div class="course-grid">
-            <div class="course-card">
-              <span class="badge">Beginner</span>
-              <h3>Diploma in Acupuncture Therapy (D.A.T)</h3>
-              <p>6-month course duration</p>
-              <hr>
-              <p class="course-desc">A foundational program covering meridian channels, needle techniques, and patient safety protocols.</p>
-            </div>
-            <div class="course-card">
-              <span class="badge">Advanced</span>
-              <h3>Master of Acupuncture (M.Acu)</h3>
-              <p>1-year intensive training</p>
-              <hr>
-              <p class="course-desc">Advanced practical training focusing on complex case studies, pulse diagnosis, and specialized treatments.</p>
-            </div>
-            <div class="course-card">
-              <span class="badge">Specialty</span>
-              <h3>Tibb-e-Nabawi Medicine</h3>
-              <p>3-month certificate</p>
-              <hr>
-              <p class="course-desc">Specialized prophetic medicine including Hijama, dietary therapy, and natural remedies.</p>
-            </div>
-          </div>
-        </section>
-        
-      </div>
-    </div>
-
-  </div>
-
-  <!-- The Daily Hadith is injected via JS globally if needed, or you can place it inside one of the panels -->
-  
   <script src="script.js"></script>
 </body>
 </html>
